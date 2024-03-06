@@ -50,7 +50,7 @@
                            Height="449"
                            Source="C:\Users\stst50\source\repos\ENL Distribution\ENL Distribution\Images\Man.png"
                            HorizontalAlignment="Left"
-                           VerticalAlignment="Bottom" Margin="262,0,0,-216" RenderTransformOrigin="0.5,0.5">
+                           VerticalAlignment="Bottom" Margin="202,0,0,-216" RenderTransformOrigin="0.5,0.5">
                         <Image.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
