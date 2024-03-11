@@ -1,4 +1,5 @@
 ﻿using ENL_Distribution.MVVM.View;
+using Microsoft.Win32;
 using System.Windows;
 
 namespace ENL_Distribution
@@ -10,17 +11,8 @@ namespace ENL_Distribution
     {
         protected void ApplicationStart(object sender, StartupEventArgs e)
         {
-            var LoginView = new LoginView();
-            LoginView.Show();
-            LoginView.IsVisibleChanged += (s, ev) =>
-            {
-                if (LoginView.IsVisible == false && LoginView.IsLoaded)
-                {
-                    var MainWindow = new MainWindow();
-                    MainWindow.Show();
-                    LoginView.Close();
-                }
-            };
+            var loginView = new LoginView();
+            loginView.Show();
         }
     }
 

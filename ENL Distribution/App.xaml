@@ -12,13 +12,13 @@
                 <ResourceDictionary Source="Theme\MenuButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme\TextboxTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-            
+
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
-                
+
                 <view:HomeView/>
-                
+
             </DataTemplate>
-            
+
             <DataTemplate DataType="{x:Type viewModel:DiscoveryViewModel}">
 
                 <view:DiscoveryView/>
@@ -28,6 +28,4 @@
         </ResourceDictionary>
     </Application.Resources>
 </Application>
-
-    
-    <!--MVVM/View/LoginView.xaml-->
+  
