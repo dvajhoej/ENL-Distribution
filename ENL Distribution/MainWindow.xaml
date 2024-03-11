@@ -8,16 +8,31 @@
         Height="600" Width="920"
         WindowStyle="None"
         ResizeMode="NoResize"
-        Background="Transparent"
         AllowsTransparency="True"
-        MouseDown="Window_MouseDown">
+        Background="Transparent"
+        MouseDown="Window_MouseDown"
+        WindowStartupLocation="CenterScreen">
+
 
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
 
-    <Border Background="#272537"
-            CornerRadius="20">
+
+    <Border CornerRadius="20"
+            BorderThickness="5"
+            Opacity="1" Margin="1,0,-1,0">
+        <Border.Background>
+            <ImageBrush ImageSource="/Back-Image.png" Stretch="UniformToFill">
+            </ImageBrush>
+        </Border.Background>
+
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="WhiteSmoke" Offset="0"/>
+                <GradientStop Color="#1f1448" Offset="0.75"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="250"/>
@@ -64,12 +79,78 @@
                        HorizontalAlignment="Left"
                        Margin="5"
                        Grid.Column="1"
-                       Style="{StaticResource ModernTextbox}"/>
+                       Style="{StaticResource ModernTextbox}" TextChanged="TextBox_TextChanged"/>
 
             <ContentControl Grid.Row="1"
                             Grid.Column="1"
-                            Margin="10,10,10,10"
+                            Margin="5,10,0,10"
                             Content="{Binding Currentview}"/>
+            <Button x:Name="btnMinimize"
+                BorderThickness="0"
+                Content="-"
+                Foreground="Black"
+                FontSize="16"
+                FontFamily="Montserrat"
+                Cursor="Hand"
+                Grid.Column="1"
+                Click="BtnMinimize_Click" Margin="592,-3,43,48">
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="DarkGray"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="WhiteSmoke"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="18" Height="18"
+                            CornerRadius="9"
+                            Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                HorizontalAlignment="Center"/>
+
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+            <Button x:Name="btnClose"
+                BorderThickness="0"
+                Content="x"
+                Foreground="Black"
+                FontSize="16"
+                FontFamily="Montserrat"
+                Cursor="Hand"
+                Grid.Column="1"
+                Click="BtnClose_Click" Margin="617,-3,18,48">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="DarkGray"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="White"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="18" Height="18"
+                            CornerRadius="9"
+                            Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                HorizontalAlignment="Center"/>
+
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
 
         </Grid>
 

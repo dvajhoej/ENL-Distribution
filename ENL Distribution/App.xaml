@@ -4,7 +4,8 @@
              xmlns:local="clr-namespace:ENL_Distribution"
              xmlns:viewModel="clr-namespace:ENL_Distribution.MVVM.ViewModel"
              xmlns:view="clr-namespace:ENL_Distribution.MVVM.View"
-             StartupUri="MVVM/View/LoginView.xaml">
+             
+             Startup="ApplicationStart">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -27,3 +28,6 @@
         </ResourceDictionary>
     </Application.Resources>
 </Application>
+
+    
+    <!--MVVM/View/LoginView.xaml-->

@@ -40,14 +40,14 @@ namespace ENL_Distribution.MVVM.View
             Application.Current.Shutdown();
         }
 
-        private void txtUder_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
-        }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-
+            //MainWindow mainWindow = new MainWindow();
+            //mainWindow.Show();
+            //this.Close();
         }
+
     }
 }

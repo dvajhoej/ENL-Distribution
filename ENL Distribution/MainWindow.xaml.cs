@@ -18,6 +18,21 @@ namespace ENL_Distribution
             if (e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
         }
-    }
 
+        private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
+
+        private void BtnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+    }
 }
+

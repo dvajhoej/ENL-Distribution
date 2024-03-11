@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ENL_Distribution.MVVM.View"
+        xmlns:viewModel="clr-namespace:ENL_Distribution.MVVM.ViewModel" 
+        xmlns:customcontrole="clr-namespace:ENL_Distribution.CustomControle"
         mc:Ignorable="d"
         Title="LoginView" Height="550" Width="800"
         WindowStyle="None"
@@ -13,14 +15,26 @@
         Background="Transparent"
         AllowsTransparency="True">
 
+
+
+    <Window.DataContext>
+        <viewModel:LoginViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
+    </Window.Resources>
+
+    <Window.Visibility>
+        <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleanToVisibility}"/>
+    </Window.Visibility>
     <Border CornerRadius="50">
         <Border.Background>
-            <ImageBrush ImageSource="C:\Users\stst50\source\repos\ENL Distribution\ENL Distribution\Images\Back-Image.png"
+            <ImageBrush ImageSource="\Images\Back-Image.png"
                         Stretch="UniformToFill"/>
         </Border.Background>
 
         <Border BorderThickness="5"
-            CornerRadius="50"
+            CornerRadius="48"
             Opacity="0.85" Margin="1,0,-1,0">
 
             <Border.BorderBrush>
@@ -128,10 +142,7 @@
                 <StackPanel Width="250"
                                 Grid.Row="1"
                                 Orientation="Vertical"
-                                Margin="0,10,140,0">
-                    <Image Source="/Images/Logo.png"
-                       Height="250"
-                       Width="250"/>
+                                Margin="0,150,140,0">
 
                     <TextBlock Text="ENL Distribution"
                                Foreground="WhiteSmoke"
@@ -161,6 +172,7 @@
 
 
                     <TextBox x:Name="txtUser"
+                             Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
                                FontSize="13"
                                FontWeight="Medium"
                                FontFamily="Montserrat"
@@ -173,7 +185,7 @@
                              Margin="0,5,0,0" 
                              Padding="25,0,0,0">
                         <TextBox.Background>
-                            <ImageBrush ImageSource="C:\Users\stst50\source\repos\ENL Distribution\ENL Distribution\Images\User-icon.png" 
+                            <ImageBrush ImageSource="/Images\User-icon.png" 
                                         Stretch="None"
                                         AlignmentX="Left"/>
 
@@ -190,37 +202,30 @@
                  Margin="0,5,0,0"/>
 
 
-                    <PasswordBox x:Name="txtPassword"
-                 FontSize="13"
-                 FontWeight="Medium"
-                 FontFamily="Montserrat"
-                 Foreground="White"
-                 CaretBrush="LightGray"
-                BorderBrush="DarkGray"
-                BorderThickness="0,0,0,1"
-                Height="28"
-                VerticalContentAlignment="Center"
-               Margin="0,5,0,0"
-                             Padding="25,0,0,0">
-                        <PasswordBox.Background>
-                            <ImageBrush ImageSource="C:\Users\stst50\source\repos\ENL Distribution\ENL Distribution\Images\Key-icon.png" 
-                          Stretch="None"
-                          AlignmentX="Left"/>
+                    <customcontrole:BindablePasswordBox Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         Height="28"
+                         Margin="0,5,0,0"/>
 
-                        </PasswordBox.Background>
-                    </PasswordBox>
+                    <TextBlock Text="{Binding ErrorMessage}"
+                               Foreground="LightSalmon"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"
+                               Margin="0,5,0,0"
+                               TextWrapping="Wrap"/>
+
                     <Button x:Name="btnLogin"
-        BorderThickness="0"
-        Content="Login"
-        Foreground="Black"
-        FontSize="16"
-        FontFamily="Montserrat"
-        Cursor="Hand"
-        Grid.Column="1"
-        Click="btnLogin_Click">
+                            Command="{Binding LoginCommand}"
+                            BorderThickness="0"
+                            Content="Login"
+                            Foreground="Black"
+                            FontSize="16"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="1">
 
                         <Button.Style>
-                            <Style TargetType="Button">
+                            <Style TargetType="{x:Type Button}">
                                 <Setter Property="Background" Value="DarkGray"/>
                                 <Style.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
@@ -228,10 +233,10 @@
                                     </Trigger>
                                 </Style.Triggers>
                             </Style>
-                        </Button.Style> 
+                        </Button.Style>
 
                         <Button.Template>
-                            <ControlTemplate TargetType="Button">
+                            <ControlTemplate TargetType="{x:Type Button}">
                                 <Border Width="150" Height="30"
                     CornerRadius="15"
                                         Margin="10"
@@ -266,6 +271,16 @@
                     </StackPanel>
 
                 </StackPanel>
+                <Image Margin="407,73,-56,145" Source="/Images/AI-Hand.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.99999999999999989"/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-20.08"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
 
 
 

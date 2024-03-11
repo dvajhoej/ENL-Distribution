@@ -17,13 +17,14 @@
                                        VerticalAlignment="Center"
                                        Padding="5"
                                        Foreground="#CFCFCF"
+                                     BorderThickness="0"
                                        x:Name="SerchBox"/>
                             
                             <TextBlock IsHitTestVisible="False"
                                        Text="Serch"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Left"
-                                       Margin="11"
+                                       Margin="11"                                       
                                        Foreground="DarkGray"
                                        Grid.Column="1">
                                 

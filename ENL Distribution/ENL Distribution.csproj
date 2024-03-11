@@ -10,8 +10,50 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Back-Image.png" />
+    <None Remove="Images\AI-Hand.png" />
+    <None Remove="Images\Back-Image.png" />
+    <None Remove="Images\Icon.ico" />
+    <None Remove="Images\Key-icon.png" />
+    <None Remove="Images\Logo.png" />
+    <None Remove="Images\Man.png" />
+    <None Remove="Images\User-icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\AI-Hand.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Back-Image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Key-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Fonts\" />
-    <Folder Include="MVVM\Model\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Back-Image.png" />
+    <Resource Include="Images\Man.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\User-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
