@@ -13,6 +13,7 @@
     <None Remove="Back-Image.png" />
     <None Remove="Images\AI-Hand.png" />
     <None Remove="Images\Back-Image.png" />
+    <None Remove="Images\Email-icon.png" />
     <None Remove="Images\Icon.ico" />
     <None Remove="Images\Key-icon.png" />
     <None Remove="Images\Logo.png" />
@@ -27,6 +28,7 @@
     <Resource Include="Images\Back-Image.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\Email-icon.png" />
     <Resource Include="Images\Icon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

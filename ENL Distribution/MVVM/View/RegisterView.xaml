@@ -7,7 +7,7 @@
         xmlns:viewModel="clr-namespace:ENL_Distribution.MVVM.ViewModel" 
         xmlns:customcontrole="clr-namespace:ENL_Distribution.CustomControle"
         mc:Ignorable="d"
-        Title="LoginView" Height="533" Width="290"
+        Title="LoginView" Height="422" Width="290"
         WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
@@ -27,7 +27,13 @@
     <Window.Visibility>
         <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleanToVisibility}"/>
     </Window.Visibility>
-    <Border CornerRadius="50">
+    <Border CornerRadius="50" RenderTransformOrigin="0.5,0.5" Height="422" VerticalAlignment="Center">
+        <Border.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <RotateTransform/>
+            </TransformGroup>
+        </Border.RenderTransform>
         <Border.Background>
             <ImageBrush ImageSource="\Images\Back-Image.png"
                         Stretch="UniformToFill"/>
@@ -35,7 +41,7 @@
 
         <Border BorderThickness="5"
             CornerRadius="48"
-            Opacity="0.85" Margin="1,0,-1,0">
+            Opacity="0.85" Margin="0,0,-1,0">
 
             <Border.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -53,7 +59,9 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30"/>
-                    <RowDefinition/>
+                    <RowDefinition Height="243*"/>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="33*"/>
                 </Grid.RowDefinitions>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -140,7 +148,7 @@
                 </Grid>
 
                 <StackPanel
-                                Orientation="Vertical" Margin="0,10,0,0" Grid.Row="1">
+                                Orientation="Vertical" Margin="0,10,0,0" Grid.Row="1" Grid.RowSpan="3">
 
                     <TextBlock Text="ENL Distribution"
                                Foreground="WhiteSmoke"
@@ -162,16 +170,16 @@
                                Foreground="WhiteSmoke"
                                FontSize="12"
                                FontWeight="Medium"
+                               
                                FontFamily="Montserrat"
                                HorizontalAlignment="left"
                                TextWrapping="Wrap"
                                TextAlignment="Center"
-                               Margin="0,25,0,0"/>
+                               Margin="5,25,0,0"
+                               />
 
 
                     <TextBox x:Name="txtNewUser"
-                             Text="{Binding NewUsername, UpdateSourceTrigger=PropertyChanged}"
-                               FontSize="13"
                                FontWeight="Medium"
                                FontFamily="Montserrat"
                                Foreground="White"
@@ -180,8 +188,9 @@
                               BorderThickness="0,0,0,1"
                               Height="28"
                               VerticalContentAlignment="Center"
-                             Margin="0,5,0,0" 
-                             Padding="0,0,0,0">
+                             Margin="5,0,0,0" 
+                             Padding="35,0,0,0">
+
                         <TextBox.Background>
                             <ImageBrush ImageSource="/Images\User-icon.png" 
                                         Stretch="None"
@@ -189,38 +198,146 @@
 
                         </TextBox.Background>
                     </TextBox>
+                    <TextBlock Text="Fornavn:"
+                        Foreground="WhiteSmoke"
+                        FontSize="12"
+                        FontWeight="Medium"
+                        FontFamily="Montserrat"
+                        TextWrapping="Wrap"
+                        TextAlignment="Left"
+                         Margin="5,0,0,0"
+
+                               />
+                    <TextBox x:Name="TxtName"
+                        FontSize="13"
+                        FontWeight="Medium"
+                        FontFamily="Montserrat"
+                        Foreground="White"
+                        CaretBrush="LightGray"
+                        BorderBrush="DarkGray"
+                        BorderThickness="0,0,0,1"
+                             Margin="5,0,0,0"
+                        Height="28"
+                        VerticalContentAlignment="Center" 
+                        Padding="35,0,0,0">
+
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Images\User-icon.png" 
+                                Stretch="None"
+                                AlignmentX="Left"/>
+
+                        </TextBox.Background>
+                    </TextBox>
+                    <TextBlock Text="Efternavn:"
+                        Foreground="WhiteSmoke"
+                        FontSize="12"
+                               Margin="5,0,0,0"
+                        FontWeight="Medium"
+                        FontFamily="Montserrat"
+                        TextWrapping="Wrap"
+                        TextAlignment="Left"
+                               />
+                    <TextBox x:Name="TxtLastName"
+                        FontSize="13"
+                        FontWeight="Medium"
+                        FontFamily="Montserrat"
+                        Foreground="White"
+                        CaretBrush="LightGray"
+                        BorderBrush="DarkGray"
+                        BorderThickness="0,0,0,1"
+                             Margin="5,0,0,0"
+                        Height="28"
+                        VerticalContentAlignment="Center" 
+                        Padding="35,0,0,0">
+
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Images\User-icon.png" 
+                                Stretch="None"
+                                AlignmentX="Left"/>
+
+                        </TextBox.Background>
+                    </TextBox>
+                    <TextBlock Text="Email:"
+                        Foreground="WhiteSmoke"
+                        FontSize="12"
+                        FontWeight="Medium"
+                        FontFamily="Montserrat"
+                        TextWrapping="Wrap"
+                                                       Margin="5,0,0,0"
+
+                        TextAlignment="Left"
+                               />
+                    <TextBox x:Name="txtNewEmail"
+                        FontSize="13"
+                        FontWeight="Medium"
+                        FontFamily="Montserrat"
+                        Foreground="White"
+                        CaretBrush="LightGray"
+                        BorderBrush="DarkGray"
+                        BorderThickness="0,0,0,1"
+                        Margin="5,0,0,0"
+                        Height="28"
+                        VerticalContentAlignment="Center" 
+                        Padding="35,0,0,0">
+
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Images\Email-icon.png" 
+                                Stretch="None"
+                                AlignmentX="Left"/>
+
+                        </TextBox.Background>
+                    </TextBox>
+
                     <TextBlock Text="Kodeord:"
                  Foreground="WhiteSmoke"
                  FontSize="12"
                  FontWeight="Medium"
                  FontFamily="Montserrat"
+
                  HorizontalAlignment="left"
                  TextWrapping="Wrap"
                  TextAlignment="Center"
-                 Margin="0,5,0,0"/>
+                 Margin="5,5,0,0"/>
 
 
-                    <PasswordBox x:Name="Password" Background="Transparent"
+                    <PasswordBox x:Name="Password" 
                          Height="28"
-                         Margin="0,5,0,0"/>
+                                 Foreground="WhiteSmoke"
+                         Margin="5,5,0,0"
+                                 Padding="35,0,0,0"
+                                 BorderBrush="AliceBlue"
+                                 BorderThickness="1">
+                        <PasswordBox.Background>
+                            <ImageBrush ImageSource="\Images\Key-icon.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"/>
+                        </PasswordBox.Background>
+                    </PasswordBox>
 
-                    <TextBlock Text="{Binding ErrorMessageCreate}"
+                    <TextBlock x:Name="Errorbox"
+                        Text=""
                                Foreground="LightSalmon"
                                FontSize="12"
                                FontWeight="Medium"
                                FontFamily="Montserrat"
                                Margin="0,5,0,0"
                                TextWrapping="Wrap"/>
-
                     <Button x:Name="btnRegister"
-                            Command="{Binding LoginCommandCreate}"
                             BorderThickness="0"
                             Content="Register"
                             Foreground="Black"
                             FontSize="16"
                             FontFamily="Montserrat"
                             Cursor="Hand"
-                            Grid.Column="1" Click="btnRegister_Click">
+                            Click="btnRegister_Click" RenderTransformOrigin="0.5,0.5" Height="52">
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleX="-1.102"/>
+                                <RotateTransform/>
+                                <TranslateTransform X="-0.481"/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
 
                         <Button.Style>
                             <Style TargetType="{x:Type Button}">
@@ -251,16 +368,6 @@
                                 Margin="0,0,0,0"/>
 
                 </StackPanel>
-                <Image Margin="-197,289,12,-71" Source="/Images/AI-Hand.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform ScaleX="-1"/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="-57.728"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
 
 
 

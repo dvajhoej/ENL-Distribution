@@ -1,18 +1,13 @@
 ﻿using ENL_Distribution.MVVM.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
 using ENL_Distribution.Repositories;
 using System.Net;
+using System.Security;
 using System.Security.Principal;
+using System.Windows.Input;
 
 namespace ENL_Distribution.MVVM.ViewModel
 {
-   public class LoginViewModel : ViewModelBase
+    public class LoginViewModel : ViewModelBase
     {
         private string _username;
         private SecureString _password;
@@ -100,6 +95,8 @@ namespace ENL_Distribution.MVVM.ViewModel
             {
                 Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity(Username), null);
                 IsViewVisible = false;
+                var mainView = new MainWindow();
+                mainView.Show();
             }
             else
             {

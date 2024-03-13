@@ -1,5 +1,4 @@
-﻿using System;
-using ENL_Distribution.Core;
+﻿using ENL_Distribution.Core;
 
 namespace ENL_Distribution.MVVM.ViewModel
 {
@@ -7,19 +6,21 @@ namespace ENL_Distribution.MVVM.ViewModel
     {
         public RelayCommand HomeViewCommand { get; set; }
         public RelayCommand DiscoveryViewCommand { get; set; }
+        public RelayCommand MedarbejdereViewCommand { get; set; }
 
 
 
         public HomeViewModel HomeVm { get; set; }
         public DiscoveryViewModel DiscoveryVm { get; set; }
+        public MedarbejdereViewModel MedarbejdereVm { get; set; }
 
 
         private object _currentview;
-        
+
         public object Currentview
         {
             get { return _currentview; }
-            set 
+            set
             {
                 _currentview = value;
                 OnPropertyChanged();
@@ -30,7 +31,7 @@ namespace ENL_Distribution.MVVM.ViewModel
         {
             HomeVm = new HomeViewModel();
             DiscoveryVm = new DiscoveryViewModel();
-
+            MedarbejdereVm = new MedarbejdereViewModel();
             Currentview = HomeVm;
 
             HomeViewCommand = new RelayCommand(o =>
@@ -41,6 +42,10 @@ namespace ENL_Distribution.MVVM.ViewModel
             {
                 Currentview = DiscoveryVm;
             });
+            MedarbejdereViewCommand = new RelayCommand(o =>
+             {
+                 Currentview = MedarbejdereVm;
+             });
         }
     }
 }

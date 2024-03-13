@@ -66,11 +66,13 @@
                                 FontSize="14"
                                 Style="{StaticResource MenuButtonTheme}"
                                 Command="{Binding DiscoveryViewCommand}"/>
-                <RadioButton    Content="Featured"
+                <RadioButton    Content="Medarbejdere"
                                 Height="50"
                                 Foreground="White"
                                 FontSize="14"
-                                Style="{StaticResource MenuButtonTheme}"/>
+                                Style="{StaticResource MenuButtonTheme}"
+                                Command="{Binding MedarbejdereViewCommand}"
+/>
 
             </StackPanel>
             <TextBox Width="250"

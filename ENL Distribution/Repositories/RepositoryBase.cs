@@ -12,7 +12,7 @@ namespace ENL_Distribution.Repositories
         private readonly string _connectionString;
         public RepositoryBase()
         {
-            _connectionString = "Server=(localdb)\\local; Database=LRDATABASE; Integrated Security=True";
+            _connectionString = "Server=(localdb)\\local; Database=MVVMLoginDb; Integrated Security=True";
         }
         protected SqlConnection GetConnection()
         {

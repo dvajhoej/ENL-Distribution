@@ -1,19 +1,6 @@
-﻿using ENL_Distribution.CustomControle;
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.SqlClient;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ENL_Distribution.MVVM.View
 {
@@ -40,38 +27,52 @@ namespace ENL_Distribution.MVVM.View
 
         private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            var loginView = new LoginView();
+            loginView.Show();
+            this.Close();
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
-            using (SqlConnection con = new SqlConnection("Server=(localdb)\\local; Database=LRDATABASE; Integrated Security=True"))
+
+            if (txtNewUser.Text.Length >= 5 && TxtName.Text.Length >= 2 && TxtLastName.Text.Length >= 1 && txtNewEmail.Text.Contains("@"))
             {
-                con.Open();
 
-                string add_data = "INSERT INTO [dbo].[user] ([username], [password]) VALUES (@username, @password)";
-                using (SqlCommand cmd = new SqlCommand(add_data, con))
+
+                using (SqlConnection con = new SqlConnection("Server=(localdb)\\local; Database=MVVMLoginDb; Integrated Security=True"))
                 {
-                    
-                    cmd.Parameters.AddWithValue("@username", txtNewUser.Text);
-                    cmd.Parameters.AddWithValue("@password", Password.Password);
+                    con.Open();
 
-                    cmd.ExecuteNonQuery();
+                    string add_data = "INSERT INTO [dbo].[user] ([Username], [Name], [LastName], [Password], [Email]) VALUES (@Username, @Name, @LastName, @Password, @Email)";
+                    using (SqlCommand cmd = new SqlCommand(add_data, con))
+                    {
+
+                        cmd.Parameters.AddWithValue("@Username", txtNewUser.Text);
+                        cmd.Parameters.AddWithValue("@Password", Password.Password);
+                        cmd.Parameters.AddWithValue("@Name", TxtName.Text);
+                        cmd.Parameters.AddWithValue("@LastName", TxtLastName.Text);
+                        cmd.Parameters.AddWithValue("@Email", txtNewEmail.Text);
+
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    con.Close();
+                    txtNewUser.Text = "";
+                    Password.Password = "";
+                    var loginView = new LoginView();
+                    loginView.Show();
+                    this.Close();
                 }
-            
-                con.Close();
-                txtNewUser.Text = "";
-                Password.Password = "";
-                var loginView = new LoginView();
-                loginView.Show();
-                this.Close();
             }
-           
+            else
+            {
+                Errorbox.Text = "Indtast Korrekte Oplysninger";
+                Password.Password = "";
+            }
         }
 
-
-
-
+ 
     }
 
 }

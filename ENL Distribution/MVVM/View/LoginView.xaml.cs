@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ENL_Distribution.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,14 +41,16 @@ namespace ENL_Distribution.MVVM.View
             Application.Current.Shutdown();
         }
 
-        private void btnRegisterUser_Click(object sender, RoutedEventArgs e)
+
+        private void Reg_MouseDown(object sender, MouseButtonEventArgs e)
+
         {
             RegisterView registerView = new RegisterView();
             registerView.Show();
             this.Hide(); // Assuming 'this' refers to the LoginView
+
         }
+
+      
     }
 }
-//MainWindow mainWindow = new MainWindow();
-//mainWindow.Show();
-//this.Close()

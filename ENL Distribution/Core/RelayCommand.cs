@@ -17,6 +17,11 @@ namespace ENL_Distribution.Core
             _execute = execute;
             _canExecute = canExecute;
         }
+
+        public RelayCommand(Action executeClickCommand)
+        {
+        }
+
         public bool CanExecute(object parameter)
         {
             return _canExecute == null || _canExecute(parameter);
