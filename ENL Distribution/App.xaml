@@ -19,12 +19,24 @@
 
             </DataTemplate>
 
-            <DataTemplate DataType="{x:Type viewModel:DiscoveryViewModel}">
+            <DataTemplate DataType="{x:Type viewModel:ProdukterViewModel}">
 
-                <view:DiscoveryView/>
+                <view:ProdukterView/>
 
             </DataTemplate>
 
+
+            <DataTemplate DataType="{x:Type viewModel:MedarbejdereViewModel}">
+
+                <view:MedarbejdereView/>
+
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:OrdreViewModel}">
+
+                <view:OrdreView/>
+
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

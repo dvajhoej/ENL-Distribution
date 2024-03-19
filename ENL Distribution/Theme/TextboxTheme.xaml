@@ -15,7 +15,7 @@
                                        Text="{TemplateBinding Text}"
                                        Background="Transparent"
                                        VerticalAlignment="Center"
-                                       Padding="5"
+                                       Padding="9"
                                        Foreground="#CFCFCF"
                                      BorderThickness="0"
                                        x:Name="SerchBox"/>

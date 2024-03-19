@@ -1,18 +1,20 @@
 ﻿using ENL_Distribution.Core;
+using System.Windows.Input;
 
 namespace ENL_Distribution.MVVM.ViewModel
 {
     class MainViewModel : ObservableObject
     {
         public RelayCommand HomeViewCommand { get; set; }
-        public RelayCommand DiscoveryViewCommand { get; set; }
+        public RelayCommand ProdukterViewCommand { get; set; }
         public RelayCommand MedarbejdereViewCommand { get; set; }
-
+        public RelayCommand OrdreViewCommand { get; set; }
 
 
         public HomeViewModel HomeVm { get; set; }
-        public DiscoveryViewModel DiscoveryVm { get; set; }
+        public ProdukterViewModel ProdukterVm { get; set; }
         public MedarbejdereViewModel MedarbejdereVm { get; set; }
+        public OrdreViewModel OrdreVm { get; set; }
 
 
         private object _currentview;
@@ -30,22 +32,30 @@ namespace ENL_Distribution.MVVM.ViewModel
         public MainViewModel()
         {
             HomeVm = new HomeViewModel();
-            DiscoveryVm = new DiscoveryViewModel();
+            ProdukterVm = new ProdukterViewModel();
             MedarbejdereVm = new MedarbejdereViewModel();
+            OrdreVm = new OrdreViewModel();
             Currentview = HomeVm;
 
             HomeViewCommand = new RelayCommand(o =>
             {
                 Currentview = HomeVm;
             });
-            DiscoveryViewCommand = new RelayCommand(o =>
+            ProdukterViewCommand = new RelayCommand(o =>
             {
-                Currentview = DiscoveryVm;
+                Currentview = ProdukterVm;
             });
             MedarbejdereViewCommand = new RelayCommand(o =>
              {
                  Currentview = MedarbejdereVm;
              });
+            OrdreViewCommand = new RelayCommand(o =>
+            {
+                Currentview = OrdreVm;
+            });
         }
+
+      
+
     }
 }

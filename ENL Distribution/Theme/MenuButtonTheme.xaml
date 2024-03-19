@@ -7,28 +7,46 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="RadioButton">
-                        <Grid VerticalAlignment="Stretch"
-                              HorizontalAlignment="Stretch"
-                              Background="{TemplateBinding Background}">
+                        <Border VerticalAlignment="Stretch"
+                              HorizontalAlignment="Left"
+                              Background="{TemplateBinding Background}"
+                               CornerRadius="0,15,15,0"
+                                Width="170"
+                                BorderThickness="2">
+                            <Border.BorderBrush>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                    <GradientStop Color="WhiteSmoke" Offset="0"/>
+                                    <GradientStop Color="Transparent" Offset="0.75"/>
+                                </LinearGradientBrush>
+                            </Border.BorderBrush>
 
                             <TextBlock Text="{TemplateBinding Property=Content}"
                                        VerticalAlignment="Center"
                                        Margin="50,0,0,0"/>
 
-                        </Grid>
+                        </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
             <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderThickness" Value="0"/>            
+            <Setter Property="BorderThickness" Value="2"/>            
         </Style.Setters>
-        
+
         <Style.Triggers>
             <Trigger Property="IsChecked" Value="True">
-                <Setter Property="Background" Value="#22202f"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#1f1448" Offset="0"/>
+                            <GradientStop Color="Transparent" Offset="0.75"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
             </Trigger>
         </Style.Triggers>
-        
+
+
     </Style>
         
 </ResourceDictionary>
+

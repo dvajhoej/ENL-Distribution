@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="ENL_Distribution.MVVM.View.MedarbejdereView"
+﻿<UserControl x:Class="ENL_Distribution.MVVM.View.ProdukterView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="650">
     <StackPanel>
-        <TextBlock Text="Medarbejdere"
+        <TextBlock Text="Produkter"
                    Foreground="White"
                    FontSize="28"
                    HorizontalAlignment="Left"
@@ -20,8 +20,9 @@
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
 
-                        <GradientStop Color="LightBlue" Offset="0.0"/>
+                        <GradientStop Color="AliceBlue" Offset="0.0"/>
                         <GradientStop Color="Transparent" Offset="1"/>
+
 
                     </LinearGradientBrush>
 
@@ -33,8 +34,21 @@
                                        Rect="0,0,640,390"/>
                 </Border.Clip>
                 <Grid>
-                    <StackPanel/>
 
+                    <DataGrid x:Name="Datagrid" 
+             Margin="28,37,203,239"
+             Background="Transparent"
+             Opacity="0.7">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="MedarbejderID"/>
+                            <DataGridTextColumn Header="Fulde Navn"/>
+                            <DataGridTextColumn Header="Telefon nr"/>
+                            <DataGridTextColumn Header="Email"/>
+                            <DataGridTextColumn Header="Titel"/>
+                            <DataGridTextColumn Header="Udførte Ordre"/>
+                        </DataGrid.Columns>
+
+                    </DataGrid>
                     <Image Width="1211"
                            Height="772"
                            Source="/Images\Man.png"
@@ -49,20 +63,6 @@
                             </TransformGroup>
                         </Image.RenderTransform>
                     </Image>
-                    <DataGrid x:Name="Datagrid" 
-                              Margin="28,37,203,239"
-                              Background="Transparent"
-                              Opacity="0.7">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="MedarbejderID"/>
-                            <DataGridTextColumn Header="Fulde Navn"/>
-                            <DataGridTextColumn Header="Telefon nr"/>
-                            <DataGridTextColumn Header="Email"/>
-                            <DataGridTextColumn Header="Titel"/>
-                            <DataGridTextColumn Header="Udførte Ordre"/>
-                        </DataGrid.Columns>
-                        
-                    </DataGrid>
 
                 </Grid>
 

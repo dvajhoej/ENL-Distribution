@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace ENL_Distribution.MVVM.View
 {
     /// <summary>
-    /// Interaction logic for DiscoveryView.xaml
+    /// Interaction logic for ProdukterView.xaml
     /// </summary>
-    public partial class DiscoveryView : UserControl
+    public partial class ProdukterView : UserControl
     {
-        public DiscoveryView()
+        public ProdukterView()
         {
             InitializeComponent();
         }

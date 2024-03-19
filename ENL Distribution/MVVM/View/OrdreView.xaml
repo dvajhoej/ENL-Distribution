@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="ENL_Distribution.MVVM.View.DiscoveryView"
+﻿<UserControl x:Class="ENL_Distribution.MVVM.View.OrdreView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="650">
     <StackPanel>
-        <TextBlock Text="Discover"
+        <TextBlock Text="Ordre"
                    Foreground="White"
                    FontSize="28"
                    HorizontalAlignment="Left"
@@ -20,8 +20,9 @@
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
 
-                        <GradientStop Color="#5bc3ff" Offset="0.0"/>
-                        <GradientStop Color="#3aa0ff" Offset="1"/>
+                        <GradientStop Color="CornflowerBlue" Offset="0.0"/>
+                        <GradientStop Color="Transparent" Offset="1"/>
+
 
                     </LinearGradientBrush>
 
@@ -33,18 +34,7 @@
                                        Rect="0,0,640,390"/>
                 </Border.Clip>
                 <Grid>
-                    <StackPanel>
-                        <TextBlock Text="World Leader&#x0a;in global finance"
-                                   FontSize="28"
-                                   Foreground="White"
-                                   Margin="20,10,10,0"/>
-                        <TextBlock Text="Get started today!"
-           FontSize="18"
-           Foreground="White"
-           Margin="20,10,10,0"/>
-
-
-                    </StackPanel>
+                    <StackPanel/>
 
                     <Image Width="1211"
                            Height="772"
@@ -60,6 +50,21 @@
                             </TransformGroup>
                         </Image.RenderTransform>
                     </Image>
+                    <DataGrid x:Name="Datagrid" 
+                              Margin="28,37,203,239"
+                              Background="Transparent"
+                              Opacity="0.7">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="MedarbejderID" x:Name="MedarbejderID"/>
+                            <DataGridTextColumn Header="Fulde Navn" Binding="{Binding content}"/>
+                            <DataGridTextColumn Header="Telefon nr"/>
+                            <DataGridTextColumn Header="Email"/>
+                            <DataGridTextColumn Header="Titel"/>
+                            <DataGridTextColumn Header="Udførte Ordre"/>
+
+                        </DataGrid.Columns>
+                        
+                    </DataGrid>
 
                 </Grid>
 

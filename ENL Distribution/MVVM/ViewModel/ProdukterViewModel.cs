@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ENL_Distribution.MVVM.ViewModel
 {
-    class DiscoveryViewModel
+    class ProdukterViewModel
     {
     }
 }

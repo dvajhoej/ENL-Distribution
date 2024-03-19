@@ -35,13 +35,15 @@
         </Border.BorderBrush>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="215"/>
+                <ColumnDefinition Width="35"/>
                 <ColumnDefinition/>
 
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="75"/>
-                <RowDefinition/>
+                <RowDefinition Height="314*"/>
+                <RowDefinition Height="201*"/>
 
             </Grid.RowDefinitions>
             <TextBlock Text="ENL Distribution"
@@ -52,41 +54,49 @@
             Margin="20,0,0,0"/>
 
 
-            <StackPanel Grid.Row="1">
+            <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2">
                 <RadioButton    Content="Home"
                                 Height="50"
+                                
                                 Foreground="White"
                                 FontSize="14"
                                 Style="{StaticResource MenuButtonTheme}"
                                 IsChecked="True"
                                 Command="{Binding HomeViewCommand}"/>
-                <RadioButton    Content="Discovery"
+                <RadioButton    Content="Produkter"
                                 Height="50"
                                 Foreground="White"
                                 FontSize="14"
                                 Style="{StaticResource MenuButtonTheme}"
-                                Command="{Binding DiscoveryViewCommand}"/>
+                                Command="{Binding ProdukterViewCommand}"/>
                 <RadioButton    Content="Medarbejdere"
                                 Height="50"
                                 Foreground="White"
                                 FontSize="14"
                                 Style="{StaticResource MenuButtonTheme}"
-                                Command="{Binding MedarbejdereViewCommand}"
-/>
+                                Command="{Binding MedarbejdereViewCommand}"/>
+                <RadioButton    Content="Ordre"
+                                Height="50"
+                                Foreground="White"
+                                FontSize="14"
+                                Style="{StaticResource MenuButtonTheme}"
+                                Command="{Binding OrdreViewCommand}"/>
+
+
 
             </StackPanel>
             <TextBox Width="250"
                        Height="40"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Left"
-                       Margin="5"
-                       Grid.Column="1"
+                       Margin="5,0,0,0"
+                       Grid.Column="2"
                        Style="{StaticResource ModernTextbox}" TextChanged="TextBox_TextChanged"/>
 
             <ContentControl Grid.Row="1"
-                            Grid.Column="1"
+                            Grid.Column="2"
                             Margin="5,10,0,10"
-                            Content="{Binding Currentview}"/>
+                            Content="{Binding Currentview}" Grid.RowSpan="2"/>
             <Button x:Name="btnMinimize"
                 BorderThickness="0"
                 Content="-"
@@ -94,7 +104,7 @@
                 FontSize="16"
                 FontFamily="Montserrat"
                 Cursor="Hand"
-                Grid.Column="1"
+                Grid.Column="2"
                 Click="BtnMinimize_Click" Margin="592,-3,43,48">
 
                 <Button.Style>
@@ -128,7 +138,7 @@
                 FontSize="16"
                 FontFamily="Montserrat"
                 Cursor="Hand"
-                Grid.Column="1"
+                Grid.Column="2"
                 Click="BtnClose_Click" Margin="617,-3,18,48">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">

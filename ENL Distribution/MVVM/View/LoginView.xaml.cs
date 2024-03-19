@@ -1,4 +1,5 @@
 ﻿using ENL_Distribution.Core;
+using ENL_Distribution.MVVM.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,6 +52,21 @@ namespace ENL_Distribution.MVVM.View
 
         }
 
-      
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                // Retrieve the ViewModel from DataContext
+                LoginViewModel viewModel = DataContext as LoginViewModel;
+
+                // Check if ViewModel is not null and if it has the LoginCommand
+                if (viewModel != null && viewModel.LoginCommand != null && viewModel.LoginCommand.CanExecute(null))
+                {
+                    // Execute the LoginCommand
+                    viewModel.LoginCommand.Execute(null);
+                }
+            }
+        }
+
     }
 }
