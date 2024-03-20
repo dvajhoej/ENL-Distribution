@@ -50,18 +50,10 @@
                         </Image.RenderTransform>
                     </Image>
                     <DataGrid x:Name="Datagrid" 
-                              Margin="28,37,203,239"
+                              Margin="28,37,124,61"
                               Background="Transparent"
                               Opacity="0.7">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="MedarbejderID"/>
-                            <DataGridTextColumn Header="Fulde Navn"/>
-                            <DataGridTextColumn Header="Telefon nr"/>
-                            <DataGridTextColumn Header="Email"/>
-                            <DataGridTextColumn Header="Titel"/>
-                            <DataGridTextColumn Header="Udførte Ordre"/>
-                        </DataGrid.Columns>
-                        
+                                             
                     </DataGrid>
 
                 </Grid>

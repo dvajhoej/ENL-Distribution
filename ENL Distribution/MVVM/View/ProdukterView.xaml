@@ -39,15 +39,6 @@
              Margin="28,37,203,239"
              Background="Transparent"
              Opacity="0.7">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="MedarbejderID"/>
-                            <DataGridTextColumn Header="Fulde Navn"/>
-                            <DataGridTextColumn Header="Telefon nr"/>
-                            <DataGridTextColumn Header="Email"/>
-                            <DataGridTextColumn Header="Titel"/>
-                            <DataGridTextColumn Header="Udførte Ordre"/>
-                        </DataGrid.Columns>
-
                     </DataGrid>
                     <Image Width="1211"
                            Height="772"
