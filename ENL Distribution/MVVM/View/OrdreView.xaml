@@ -50,13 +50,60 @@
                             </TransformGroup>
                         </Image.RenderTransform>
                     </Image>
-                    <DataGrid x:Name="Datagrid" 
-                              Margin="28,37,203,239"
+                    <DataGrid x:Name="Datagrid"
+                              Height="auto"
+                              Width="auto"
+                              MaxWidth="400"
+                              MaxHeight="250"
+                              HorizontalAlignment="Left"
+                              VerticalAlignment="Top"
+                              Margin="15,15,0,0"
                               Background="Transparent"
-                              Opacity="0.7">
+                              Opacity="0.7"
+                              IsReadOnly="True"
+                              BorderBrush="Transparent"
+                              BorderThickness="0">
 
-                        
                     </DataGrid>
+                    <Button x:Name="btnFortryd"
+                            Content="Fortryd"
+                            Width="60"
+                            Height="30"
+                                 Foreground="White"
+                            VerticalAlignment="Bottom"
+                            HorizontalAlignment="Left"
+                            Margin="50,0,0,50" Click="btnfortryd_Click"
+                            Style="{StaticResource CRUDButtonTheme}" />
+
+                    <Button x:Name="btnEdit"
+                            Content="Edit"
+                            Width="60"
+                            Height="30"
+                            VerticalAlignment="Bottom"
+                            HorizontalAlignment="Left"
+                            Margin="130,0,0,50"
+                            Style="{StaticResource CRUDButtonTheme}"
+                            Click="btnEdit_Click"/>
+
+                    <Button x:Name="btnOpdater"
+                            Content="Opdater"
+                            Width="60"
+                            Height="30"
+                            VerticalAlignment="Bottom"
+                            HorizontalAlignment="Left"
+                            Margin="210,0,0,50"
+                            Style="{StaticResource CRUDButtonTheme}"
+                            Click="btnOpdater_Click"/>
+
+                    <Button x:Name="btnSlet"
+                            Content="Slet"
+                            Width="60"
+                            Height="30"
+                            VerticalAlignment="Bottom"
+                            HorizontalAlignment="Left"
+                            Margin="290,0,0,50"
+                            Style="{StaticResource CRUDButtonTheme}"
+                            Click="btnSlet_Click"/>
 
                 </Grid>
 
